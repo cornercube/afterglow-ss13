@@ -46,7 +46,7 @@
 /obj/item/ammo_box/magazine/pps9mm/empty
 	start_empty = 1
 
-/obj/item/ammo_box/magazine/10mm/smg
+/obj/item/ammo_box/magazine/m10mm/smg
 	name = "submachine gun magazine (10mm)"
 	icon_state = "smg10mm"
 	ammo_type = /obj/item/ammo_casing/c10mm
