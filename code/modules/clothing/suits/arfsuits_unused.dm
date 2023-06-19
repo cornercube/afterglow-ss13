@@ -2,6 +2,9 @@
  * Old armors we dont need or use or anything go here
  */
 
+/*Why the hell do we have so many armors that are actually in use in here?
+someome migrate them */
+
 // Metal- Melee, Laser Good, Ballistics Moderate, Energy, Explosion bad
 // Leather/soft armor: Melee Good, Laser , Energy, Explosion Moderate, Ballistic Bad
 // Coat style armor is good for allround protection but excels at none. (note plated with unarmored duster over is still plated.)
@@ -428,6 +431,7 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 	stiffness = LIGHT_STIFFNESS
 
 //Great Khan
+
 /obj/item/clothing/suit/armor/khan_jacket
 	name = "khan armored jacket"
 	desc = "The symbol of the greatest pushers."
@@ -795,6 +799,8 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 	desc = "A black leather jacket. <br>There is an illustration on the back - an aggressive, red-eyed skull wearing a fur hat with horns.<br>The skull has a mongoloid moustache - it's obviously a Great Khans emblem."
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/khaans.dmi'
+	armor = ARMOR_VALUE_LIGHT
+	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	icon_state = "khan_jacket"
 	item_state = "khan_jacket"
 
@@ -806,7 +812,7 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 	item_state = "khan_jacket_armored"
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_MEDIUM
-	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
 	stiffness = LIGHT_STIFFNESS
 
 //Battlecoat
