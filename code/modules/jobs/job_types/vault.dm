@@ -107,7 +107,8 @@ Head of Security
 	name = "Chief of Security"
 	jobtype = /datum/job/vault/f13hos
 
-	id = 			/obj/item/card/id/chief
+	id = /obj/item/card/id/chief
+	//pda
 	ears = 			/obj/item/radio/headset/headset_vault_hos/alt
 	uniform = 		/obj/item/clothing/under/f13/vault13
 	shoes = 		/obj/item/clothing/shoes/jackboots
