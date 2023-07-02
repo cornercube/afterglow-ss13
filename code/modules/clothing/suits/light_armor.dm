@@ -585,7 +585,7 @@
 
 //////////////////////////
 // Brotherhood of Steel //
-////////////////////////// 
+//////////////////////////
 
 /obj/item/clothing/suit/armor/light/duster/bos/scribe
 	name = "Brotherhood Scribe's robe"
@@ -661,7 +661,7 @@
 // Great Khans //
 ////////////////
 
-//These are from light jackets 
+//These are from light jackets
 /obj/item/clothing/suit/toggle/labcoat/khan_jacket
 	name = "Great Khan jacket"
 	desc = "A black leather jacket. <br>There is an illustration on the back - an aggressive, red-eyed skull wearing a fur hat with horns.<br>The skull has a mongoloid moustache - it's obviously a Great Khans emblem."
@@ -685,3 +685,17 @@
 	name = "Reinforced Great Khan jacket"
 	desc = "A black leather jacket with metal layered between it. <br>There is an illustration on the back - and aggressive, red-eyed skull wearing a fur hat with horns.<br>The skull has a mongoloid mustache it is obviously a Great Khans emblem."
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_DT_T1)
+
+//////////
+//Others//
+/////////
+//-melee, ++laser, +Bullet (Americans at anchorage were honorabu enough to fight with swords)
+/obj/item/clothing/suit/armor/light/chinasuit
+	name = "dysfunctional chinese stealth suit"
+	desc = "A matte grey set of ultralight composite above a carefully padded noise-absorbant suit. This unit, used by Chinese special forces during the great war, It's electronics have long since corroded but it still functions as very light armor."
+	icon_state = "stealthsuit"
+	item_state = "stealthsuit"
+	body_parts_hidden = CHEST|ARMS|LEGS
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_DT_T1)
+
+

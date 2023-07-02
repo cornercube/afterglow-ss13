@@ -489,6 +489,13 @@ obj/item/clothing/head/f13/army/beret
 	icon_state = "chinese_officer"
 	item_state = "chinese_officer"
 
+/obj/item/clothing/head/f13/chinese/stealth
+	name = "dysfunctional chinese stealth helmet"
+	desc = "a non-functional helmet to be used in conjunction with the stealth suit. While the electronics do not work, it still looks pretty slick."
+	icon_state = "stealthhelmet"
+	item_state = "stealthhelmet"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_DT_T1)
 //Enclave
 /obj/item/clothing/head/f13/enclave
 	name = "officer hat"
