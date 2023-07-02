@@ -706,7 +706,6 @@
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
 
-
 //WAYFARER TRIBAL
 /obj/item/clothing/under/f13/tribe
 	name = "tribal rags"
