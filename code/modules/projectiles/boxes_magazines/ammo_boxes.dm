@@ -844,7 +844,7 @@
 	icon_state = "50ap"
 
 /obj/item/ammo_box/plasmacart
-	name = "Box of Plasma Carteidges"
+	name = "Box of Plasma Cartridges"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "plasmusketbox"
 	multiple_sprites = 2
