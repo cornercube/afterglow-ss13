@@ -562,7 +562,7 @@
 	damage = 50 //2-hit KO, 3 with armor, 4 with good armor
 	wound_bonus = 51 //just to get that one over a plasma rifle
 
-/obj/item/projectile/plasmacarbine //Plasma carbine
+/obj/item/projectile/plasmacarbine //urban plasma rifle
 	name = "plasma bolt"
 	icon_state = "plasma_clot"
 	damage_type = BURN
@@ -621,9 +621,6 @@
 	damage = 55
 	wound_bonus = 35 //Adam is stronger, but not in the wounding department.
 	light_color = LIGHT_COLOR_RED
-
-/obj/item/projectile/f13plasma/pistol/worn
-	damage = 30
 
 /obj/item/projectile/f13plasma/pistol/glock //Glock (streamlined plasma pistol)
 	damage = 40
