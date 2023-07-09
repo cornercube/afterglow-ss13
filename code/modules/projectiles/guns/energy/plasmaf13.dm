@@ -267,6 +267,7 @@
 	icon = 'icons/fallout/objects/guns/longguns.dmi'
 	item_state = "plasmacaster_fnv"
 	icon_state = "plasmacaster_fnv"
+	slot_flags = ITEM_SLOT_BACK
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 
