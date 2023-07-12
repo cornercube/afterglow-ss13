@@ -28,6 +28,7 @@
 	caliber = list(CALIBER_FUEL)
 	max_ammo = 12 //6 bursts, iirc its about the same ammount as the IRL M2
 
+
 /obj/item/ammo_box/magazine/internal/f4plasma
 	name = "plasma magazine"
 	desc = "Oh god, this belongs on the inside of the gun"
@@ -35,6 +36,12 @@
 	caliber = list(CALIBER_PLASMA_CARTRIDGE)
 	max_ammo = 20 //it was 30 in Fallout 4
 	multiload = 0
+
+/obj/item/ammo_box/magazine/internal/incinerator
+	name = "incinerator fuel tank"
+	ammo_type = /obj/item/ammo_casing/caseless/incinerator
+	caliber = list(CALIBER_FUEL)
+	max_ammo = 9 //You're not getting many shots here
 
 // BETA STUFF // Obsolete
 /obj/item/ammo_box/magazine/internal/shot/lethal/test
