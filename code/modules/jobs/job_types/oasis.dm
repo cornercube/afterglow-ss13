@@ -14,7 +14,6 @@ here's a tip, go search DEFINES/access.dm
 /datum/outfit/job/den
 	name = "Nash Default Template"
 	ears = /obj/item/radio/headset/headset_town
-	belt = /obj/item/kit_spawner/waster
 	id = /obj/item/card/id/dogtag/town
 	uniform = /obj/item/clothing/under/f13/settler
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -79,11 +78,9 @@ Mayor
 /datum/outfit/job/den/f13mayor
 	name = "Mayor"
 	jobtype = /datum/job/oasis/f13mayor
-	belt = /obj/item/kit_spawner/premium
 	id = /obj/item/card/id/silver/mayor
 	ears = /obj/item/radio/headset/headset_town/mayor
 	backpack = /obj/item/storage/backpack/satchel/explorer
-	belt = /obj/item/kit_spawner/townie/mayor
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	l_pocket = /obj/item/storage/bag/money/small/oasis
 	r_pocket = /obj/item/flashlight/seclite
@@ -136,7 +133,6 @@ Mayor
 	name = "Secretary"
 	jobtype = /datum/job/oasis/f13secretary
 	id = /obj/item/card/id/silver
-	belt = /obj/item/kit_spawner/townie/mayor
 	ears = /obj/item/radio/headset/headset_town/mayor
 	glasses = /obj/item/clothing/glasses/regular/hipster
 	gloves = /obj/item/clothing/gloves/color/white
@@ -148,7 +144,8 @@ Mayor
 	shoes = /obj/item/clothing/shoes/f13/fancy
 	uniform = /obj/item/clothing/under/suit/black
 	backpack_contents = list(
-		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/storage/pill_bottle/chem_tin/radx = 1,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
 		/obj/item/ammo_box/magazine/m9mm = 1,
 		/obj/item/melee/onehanded/knife/switchblade = 1,
 		/obj/item/pda = 1
@@ -212,6 +209,7 @@ Mayor
 	exp_requirements = 750
 
 	outfit = /datum/outfit/job/den/f13sheriff
+	smutant_outfit = /datum/outfit/smutant/town/police
 
 	loadout_options = list(
 	/datum/outfit/loadout/thelaw,
@@ -230,11 +228,16 @@ Mayor
 		)
 	)
 
+/datum/outfit/smutant/town/police
+	suit = /obj/item/clothing/suit/armor/medium/duster/mutie
+	uniform = /obj/item/clothing/under/f13/mutie/townie/deputy
+	shoes = /obj/item/clothing/shoes/f13/mutie/boots
+	gloves = /obj/item/clothing/gloves/f13/mutie/sign
+
 /datum/outfit/job/den/f13sheriff
 	name = "Sheriff"
 	jobtype = /datum/job/oasis/f13sheriff
 	id = /obj/item/card/id/dogtag/sheriff
-	belt = /obj/item/kit_spawner/lawman/sheriff
 	ears = /obj/item/radio/headset/headset_town/lawman
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
@@ -262,8 +265,8 @@ Mayor
 	shoes = /obj/item/clothing/shoes/f13/military/plated
 
 	backpack_contents = list(
-	/obj/item/ammo_box/tube/c4570 = 3,
-	/obj/item/gun_upgrade/scope/watchman = 1
+		/obj/item/ammo_box/tube/c4570 = 3,
+		/obj/item/gun_upgrade/scope/watchman = 1
 	)
 
 /datum/outfit/loadout/thechief
@@ -310,6 +313,7 @@ Mayor
 	)
 
 	outfit = /datum/outfit/job/den/f13deputy
+	smutant_outfit = /datum/outfit/smutant/town/police
 	access = list(ACCESS_BAR, ACCESS_GATEWAY, ACCESS_OFFICER)
 	minimal_access = list(ACCESS_BAR, ACCESS_GATEWAY, ACCESS_OFFICER)
 	matchmaking_allowed = list(
@@ -328,7 +332,6 @@ Mayor
 	ears = /obj/item/radio/headset/headset_town/lawman
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
-	belt = /obj/item/kit_spawner/lawman
 	suit_store = /obj/item/storage/belt/legholster
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
@@ -398,6 +401,7 @@ Mayor
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13prospector
+	smutant_outfit = /datum/outfit/smutant/town/labourer
 
 	access = list(ACCESS_BAR, ACCESS_MINING)
 	minimal_access = list(ACCESS_BAR, ACCESS_MINING)
@@ -413,6 +417,12 @@ Mayor
 	loadout_options = list(
 	/datum/outfit/loadout/engineer,
 	/datum/outfit/loadout/miner,)
+
+/datum/outfit/smutant/town/labourer
+	suit = /obj/item/clothing/suit/hooded/cloak/mutie/poncho/weathered/townie
+	uniform = /obj/item/clothing/under/f13/mutie/townie/overalls
+	shoes = /obj/item/clothing/shoes/f13/mutie
+	gloves = /obj/item/clothing/gloves/f13/mutie
 
 /datum/outfit/job/den/f13prospector
 	name = "Prospector"
@@ -506,7 +516,6 @@ Mayor
 /datum/outfit/job/den/f13dendoc
 	name = "Doctor"
 	jobtype = /datum/job/oasis/f13dendoc
-	belt = /obj/item/kit_spawner/townie/doctor
 	ears = /obj/item/radio/headset/headset_town/medical
 	uniform = /obj/item/clothing/under/f13/medic
 	neck = /obj/item/clothing/neck/stethoscope
@@ -555,6 +564,7 @@ Mayor
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13barkeep
+	smutant_outfit = /datum/outfit/smutant/town/labourer
 
 	loadout_options = list(
 	/datum/outfit/loadout/rugged,
@@ -580,7 +590,6 @@ Mayor
 	uniform = /obj/item/clothing/under/f13/bartenderalt
 	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset/headset_town/commerce
-	belt = /obj/item/kit_spawner/townie/barkeep
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	backpack = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
@@ -640,6 +649,7 @@ Mayor
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13settler
+	smutant_outfit = /datum/outfit/smutant/town
 
 	loadout_options = list(
 		/datum/outfit/loadout/gambler,
@@ -657,11 +667,15 @@ Mayor
 		)
 	)
 
+/datum/outfit/smutant/town
+	suit = /obj/item/clothing/suit/hooded/cloak/mutie/poncho/weathered/townie
+	uniform = /obj/item/clothing/under/f13/mutie/townie
+	shoes = /obj/item/clothing/shoes/f13/mutie/boots
+	gloves = /obj/item/clothing/gloves/f13/mutie/sign
 
 /datum/outfit/job/den/f13settler
 	name = "Citizen"
 	jobtype = /datum/job/oasis/f13settler
-	belt = /obj/item/kit_spawner/townie
 	id = /obj/item/card/id/dogtag/town
 	uniform = /obj/item/clothing/under/f13/settler
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -706,9 +720,9 @@ Mayor
 	uniform = /obj/item/clothing/under/f13/worn
 	gloves = /obj/item/clothing/gloves/f13/leather
 	backpack_contents = list(/obj/item/reagent_containers/food/drinks/flask = 1,
-	/obj/item/gun/ballistic/automatic/pistol/pistol22 = 1,
-	/obj/item/ammo_box/magazine/m22 = 1,
-	/obj/item/stack/f13Cash/caps/twofivezero = 1,
+		/obj/item/gun/ballistic/automatic/pistol/pistol22 = 1,
+		/obj/item/ammo_box/magazine/m22 = 1,
+		/obj/item/stack/f13Cash/caps/twofivezero = 1,
 	)
 
 /datum/outfit/loadout/resident
@@ -721,10 +735,10 @@ Mayor
 	neck = /obj/item/storage/belt/shoulderholster
 	suit_store = /obj/item/gun/ballistic/revolver/single_shotgun
 	backpack_contents = list(/obj/item/ammo_box/shotgun/buck = 1,
-	/obj/item/stack/f13Cash/caps/onezerozero = 1,
-	/obj/item/storage/box/ration/menu_two = 1,
-	/obj/item/storage/box/ration/menu_eight = 1,
-	/obj/item/reagent_containers/food/drinks/flask/survival = 1,
+		/obj/item/stack/f13Cash/caps/onezerozero = 1,
+		/obj/item/storage/box/ration/menu_two = 1,
+		/obj/item/storage/box/ration/menu_eight = 1,
+		/obj/item/reagent_containers/food/drinks/flask/survival = 1,
 	)
 
 /datum/outfit/loadout/outdoorsman
@@ -737,12 +751,12 @@ Mayor
 	gloves = /obj/item/clothing/gloves/botanic_leather
 	shoes = /obj/item/clothing/shoes/f13/peltboots
 	backpack_contents = list(
-	/obj/item/ammo_box/magazine/m22 = 2,
-	/obj/item/fishingrod = 1,
-	/obj/item/binoculars = 1,
-	/obj/item/crafting/campfirekit = 1,
-	/obj/item/storage/fancy/rollingpapers/makeshift = 1,
-	/obj/item/reagent_containers/food/drinks/flask/survival = 1,
+		/obj/item/ammo_box/magazine/m22 = 2,
+		/obj/item/fishingrod = 1,
+		/obj/item/binoculars = 1,
+		/obj/item/crafting/campfirekit = 1,
+		/obj/item/storage/fancy/rollingpapers/makeshift = 1,
+		/obj/item/reagent_containers/food/drinks/flask/survival = 1,
 	)
 
 /*----------------------------------------------------------------
@@ -757,9 +771,10 @@ Mayor
 	supervisors = "paying clients and Ripley's laws"
 	selection_color = "#dcba97"
 	outfit = /datum/outfit/job/oasis/f13detective
+	smutant_outfit = /datum/outfit/smutant/town/police/detective
 
-	access = list(ACCESS_BAR, ACCESS_FORENSICS_LOCKERS)
-	minimal_access = list(ACCESS_BAR, ACCESS_FORENSICS_LOCKERS)
+	access = list(ACCESS_BAR, ACCESS_FORENSICS_LOCKERS, ACCESS_OFFICER)
+	minimal_access = list(ACCESS_BAR, ACCESS_FORENSICS_LOCKERS, ACCESS_OFFICER)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/wasteland/f13wastelander,
@@ -774,11 +789,13 @@ Mayor
 		)
 	)
 
+/datum/outfit/smutant/town/police/detective
+	uniform = /obj/item/clothing/under/f13/mutie/suit
+	gloves = /obj/item/clothing/gloves/f13/mutie/gloves
 
 /datum/outfit/job/oasis/f13detective
 	name = "Detective"
 	jobtype = /datum/job/oasis/f13detective
-	belt = /obj/item/kit_spawner/lawman
 	suit = /obj/item/clothing/suit/det_suit/grey
 	uniform = /obj/item/clothing/under/f13/detectivealt
 	head = /obj/item/clothing/head/f13/det_hat_alt
@@ -917,7 +934,6 @@ Mayor
 	jobtype = /datum/job/oasis/f13quartermaster
 	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset/headset_town/commerce
-	belt = /obj/item/kit_spawner/townie
 	uniform = /obj/item/clothing/under/f13/roving
 	backpack = /obj/item/storage/backpack
 	satchel = /obj/item/storage/backpack/satchel
@@ -928,6 +944,8 @@ Mayor
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
+		/obj/item/ammo_box/magazine/m9mm = 1,
 		/obj/item/pda/quartermaster,
 		/obj/item/stack/f13Cash/caps/twofivezero)
 
@@ -1014,7 +1032,6 @@ Mayor
 	jobtype = /datum/job/oasis/f13shopkeeper
 	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset/headset_town/commerce
-	belt = /obj/item/kit_spawner/townie
 	uniform = /obj/item/clothing/under/f13/roving
 	backpack = /obj/item/storage/backpack
 	satchel = /obj/item/storage/backpack/satchel

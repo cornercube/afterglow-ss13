@@ -105,15 +105,15 @@
 /obj/item/clothing/suit/armor/light/tribal/eighties
 	name = "Eighties light armour"
 	desc = "A fairly simple, black leather jacket with an overly popped collar. Commonly worn by the members of the 80s tribe."
-	icon_state = "eighties_armour_light"
-	item_state = "eighties_armour_light"
+	icon_state = "80s_armour_light"
+	item_state = "80s_armour_light"
 	body_parts_hidden = CHEST|ARMS
 
 /obj/item/clothing/suit/armor/light/tribal/bonedancers
 	name = "Bone Dancers light armour"
 	desc = "A chestplate, pauldrons and thigh guards made from bone and sinew. Commonly worn by members of the Bone Dancers tribe."
-	icon_state = "eighties_armour_light"
-	item_state = "eighties_armour_light"
+	icon_state = "bone_dancer_armor_light"
+	item_state = "bone_dancer_armor_light"
 	body_parts_hidden = CHEST
 
 /// to be refactored to work with the New Tier System (tm)
@@ -301,6 +301,15 @@
 	item_state = "leather_jacket_fighter"
 	body_parts_hidden = ARMS | GROIN
 
+/obj/item/clothing/suit/armor/light/raider/wastewar
+	name = "wasteland warrior armor"
+	desc = "a mad attempt to recreate armor based of images of japanese samurai, using a sawn up old car tire as shoulder pads, bits of chain to cover the hips and pieces of furniture for a breastplate. Might stop a blade but nothing else, burns easily too. Comes with an enormous scabbard welded to the back!"
+	icon_state = "wastewar"
+	item_state = "wastewar"
+	resistance_flags = FLAMMABLE
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/massive/swords
+	body_parts_hidden = CHEST | GROIN
+
 /////////////////////
 // DUSTERS & COATS //
 /////////////////////
@@ -434,7 +443,7 @@
 	body_parts_hidden = ARMS | CHEST
 
 /obj/item/clothing/suit/armor/light/leather/leather_jacket
-	name = "thick leather jacket"
+	name = "thick leather combat jacket"
 	desc = "This heavily padded leather jacket is unusual in that it has two sleeves. You'll definitely make a fashion statement whenever, and wherever, you rumble."
 	icon_state = "leather_jacket_thick"
 	item_state = "leather_jacket_thick"
@@ -501,15 +510,52 @@
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_DT_T1)
 
-/obj/item/clothing/suit/armor/light/mutantkit
-	name = "oversized armor kit"
-	desc = "Bits of armor fitted to a giant harness. Clearly not made for use by humans."
+/obj/item/clothing/suit/armor/light/mutie
+	name = "oversized armour"
+	desc = "A large boiler that's been dismantled and reshaped into crude armour. Clearly not made for use by humans."
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
-	icon_state = "mutie_armorkit"
-	item_state = "mutie_armorkit"
+	icon_state = "mutie_armour"
+	item_state = "mutie_armour"
 	heat_protection = CHEST | GROIN | LEGS| ARMS | HEAD
-	siemens_coefficient = 1.1
+	species_restricted = list("exclude","Human","Ghoul")
+
+/obj/item/clothing/suit/hooded/cloak/mutie
+	name = "mutant cloak"
+	desc = "An oversized cloak, made to fit the frame of a super mutant. Maybe he's the big ranger with an iron on his hip?"
+	icon_state = "mutie_cloak"
+	item_state = "mutie_cloak"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	hoodtype = /obj/item/clothing/head/hooded/cloakhood/mutie/poncho
+	species_restricted = list("exclude","Human","Ghoul")
+
+/obj/item/clothing/suit/hooded/cloak/mutie/poncho
+	name = "mutant poncho"
+	desc = "An oversized poncho, made to fit the frame of a super mutant. Maybe he's the big ranger with an iron on his hip?"
+	icon_state = "mutie_poncho"
+	item_state = "mutie_poncho"
+
+/obj/item/clothing/suit/hooded/cloak/mutie/poncho/weathered
+	icon_state = "mutie_poncho_weathered"
+	item_state = "mutie_poncho_weathered"
+
+/obj/item/clothing/suit/hooded/cloak/mutie/poncho/weathered/townie
+	name = "mutant townie poncho"
+	desc = "An oversized poncho, made to fit the frame of a super mutant. Maybe he's the big ranger with an iron on his hip?"
+	icon_state = "mutie_townie"
+	item_state = "mutie_townie"
+	hoodtype = /obj/item/clothing/head/hooded/cloakhood/mutie/poncho/townie
+
+/obj/item/clothing/head/hooded/cloakhood/mutie/poncho
+	name = "mutant poncho hood"
+	desc = "An oversized hood from an oversized poncho."
+	icon_state = "mutie_poncho"
+	item_state = "mutie_poncho"
+
+/obj/item/clothing/head/hooded/cloakhood/mutie/poncho/townie
+	icon_state = "mutie_townie_poncho"
+	item_state = "mutie_townie_poncho"
 
 ///////////////////////////
 // !!!FACTION SECTION!!! //
@@ -540,11 +586,19 @@
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
 
 //Mutie NCR Armor
-/obj/item/cloathing/suit/armor/light/ncr/mutant
-	name = "NCR mutant scraps"
-	desc = "So-called 'armor' given to mutant members of the NCR military. Though.. this equates to little more than scraps of armor."
-	icon_state = "mutie_ncr_scrap"
-	item_state = "mutie_ncr_scrap"
+/obj/item/clothing/suit/armor/light/ncr/mutie
+	name = "NCR Mutant armour"
+	desc = "So-called 'armor' given to mutant members of the NCR military. Though, it equates to little more than scraps of armor strapped together."
+	icon_state = "mutie_ncr"
+	item_state = "mutie_ncr"
+	species_restricted = list("exclude","Human","Ghoul")
+
+/obj/item/clothing/suit/armor/light/ncr/trailranger/mutie
+	name = "NCR Mutant Ranger Armour"
+	desc = "Actual armour issued to mutant Rangers."
+	icon_state = "mutie_ranger_armour"
+	item_state = "mutie_ranger_armour"
+	species_restricted = list("exclude","Human","Ghoul")
 
 ////////////
 // Legion //
@@ -565,7 +619,7 @@
 	icon_state = "legion_prime"
 	item_state = "legion_prime"
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_MORE_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
-	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_DT_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/light/legion/explorer
 	name = "legion explorer armor"
@@ -573,7 +627,7 @@
 	icon_state = "legion_explorer"
 	item_state = "legion_explorer"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/binocular
-	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1)
 
 /obj/item/clothing/suit/armor/light/legion/explorer/assassin
 	name = "legion assassin armor"
@@ -585,7 +639,7 @@
 
 //////////////////////////
 // Brotherhood of Steel //
-////////////////////////// 
+//////////////////////////
 
 /obj/item/clothing/suit/armor/light/duster/bos/scribe
 	name = "Brotherhood Scribe's robe"
@@ -613,8 +667,15 @@
 	desc = "A heavy-duty coat and chestrig fitted with tons of pockets. Ballistic weave and ceramic inserts are included to substantially increase Field Scribe survival rates."
 	icon_state = "scribecoat"
 	item_state = "scribecoat"
-	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
-	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
+	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_MORE_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT
+
+/obj/item/clothing/suit/armor/light/duster/bos/scribe/field_coat/lancer
+	name = "Lancer's Pilot Jacket"
+	desc = "A heavy-duty flight jacket, made from a ballistic weave with a fur lining. Worn by the Lancers of the Brotherhood of Steel."
+	icon_state = "lancer_jacket"
+	item_state = "lancer_jacket"
+	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2)
 
 /obj/item/clothing/suit/armor/light/duster/bos/scribe/elder
 	name = "Brotherhood Elder's robe"
@@ -661,7 +722,7 @@
 // Great Khans //
 ////////////////
 
-//These are from light jackets 
+//These are from light jackets
 /obj/item/clothing/suit/toggle/labcoat/khan_jacket
 	name = "Great Khan jacket"
 	desc = "A black leather jacket. <br>There is an illustration on the back - an aggressive, red-eyed skull wearing a fur hat with horns.<br>The skull has a mongoloid moustache - it's obviously a Great Khans emblem."

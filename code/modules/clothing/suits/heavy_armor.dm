@@ -157,6 +157,12 @@
 	icon_state = "elite_riot"
 	item_state = "elite_riot"
 
+/obj/item/clothing/suit/armor/heavy/riot/combat
+	name = "combat body armor"
+	icon_state = "combat_coat"
+	item_state = "combat_coat"
+	desc = "A heavy armor with ballistic inserts, sewn into a padded riot police coat."
+
 //////////////////////////
 // Salvaged Power Armor //
 //////////////////////////
@@ -167,7 +173,7 @@
 	It's literally not meant to be here, you are just wasting your time reading some text that someone wrote for you \
 	because he thought it'd be funny, or expected someone to check GitHub for once, hello by the way. \
 	If you still don't understand - it's a 'master' item, basically main type/parent object or something. \
-	It isn't meant to be used, it just dictates procs and all that stuff to the subtypes, such as t45b and so on. \
+	It isn't meant to be used, it just dictates procs and all that stuff to the subtypes, such as t45d and so on. \
 	Now begone, report this to coders. NOW!"
 	icon = 'icons/fallout/clothing/armored_heavy.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
@@ -178,40 +184,33 @@
 	custom_price = PRICE_ULTRA_EXPENSIVE
 	strip_delay = 50
 
-// T-45B
-/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b
-	name = "salvaged T-45b power armor"
-	desc = "It's a set of early-model T-45 power armor with a custom air conditioning module and stripped out servomotors. Bulky and slow, but almost as good as the real thing."
-	icon_state = "t45b_salvaged"
-	item_state = "t45b_salvaged"
-
-/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/raider
+// T-45d
+/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45d/raider
 	name = "salvaged raider power armor"
-	desc = "A destroyed T-45b power armor has been brought back to life with the help of a welder and lots of scrap metal."
+	desc = "A destroyed T-45d power armor has been brought back to life with the help of a welder and lots of scrap metal."
 	icon_state = "raider_salvaged"
 	item_state = "raider_salvaged"
 
-/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/hotrod
-	name = "salvaged hotrod T-45b power armor"
-	desc = " It's a set of T-45b power armor with a with some of its plating removed. This set has exhaust pipes piped to the pauldrons, flames erupting from them."
+/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45d/hotrod
+	name = "salvaged hotrod T-45d power armor"
+	desc = " It's a set of T-45d power armor with a with some of its plating removed. This set has exhaust pipes piped to the pauldrons, flames erupting from them."
 	icon_state = "t45hotrod"
 	item_state = "t45hotrod"
-	armor_tokens = list(ARMOR_MODIFIER_UP_FIRE_T3)
+	armor_tokens = list(ARMOR_MODIFIER_UP_FIRE_T2, ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_MELEE_T1)
 
-/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/tribal
-	name = "salvaged tribal T45-b power armor"
+/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45d/tribal
+	name = "salvaged tribal T45-d power armor"
 	desc = "A set of salvaged power armor, with certain bits of plating stripped out to retain more freedom of movement. No cooling module, though."
 	icon_state = "tribal_power_armor"
 	item_state = "tribal_power_armor"
-	slowdown = ARMOR_SLOWDOWN_SALVAGE * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT // zooom
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_DOWN_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T2)
+	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_MORE_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT // zooom
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_DOWN_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_DOWN_DT_T2)
 
 /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45d
 	name = "salvaged T-45d power armor"
 	desc = "T-45d power armor with servomotors and all valuable components stripped out of it."
 	icon_state = "t45d_salvaged"
 	item_state = "t45d_salvaged"
-	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1)
 
 // T-51B
 /obj/item/clothing/suit/armor/heavy/salvaged_pa/t51b
@@ -237,6 +236,32 @@
 	icon_state = "recycled_power"
 	item_state = "recycled_power"
 
+//Mutie
+/obj/item/clothing/suit/armor/heavy/vest/breastplate/scrap/mutie
+	name = "mutant armour"
+	desc = "Metal plates rigged to fit the frame of a super mutant. Maybe he's the big iron with a ranger on his hip?"
+	icon_state = "mutie_heavy_armour"
+	item_state = "mutie_heavy_armour"
+	species_restricted = list("exclude","Human","Ghoul")
+
+/obj/item/clothing/suit/armor/heavy/vest/breastplate/scrap/mutie/knight
+	name = "mutant knightly armour"
+	desc = "Metal plates rigged to fit the frame of a super mutant, with a tabbard that somehow fits beneath them."
+	icon_state = "mutie_knight"
+	item_state = "mutie_knight"
+
+/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/mutie
+	name = "large damaged power armor"
+	desc = "It's unclear just want kind of power armour this once was. Was it T-51? Was it APA? Maybe it was just a suit of excavator armor? There's no way of knowing. What is clear though, is that the suit cannot be repaired or restored, and it's far too large for a normal human to wear."
+	icon_state = "mutie_power_armor"
+	item_state = "mutie_power_armor"
+	species_restricted = list("exclude","Human","Ghoul")
+
+/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/mutie/ncr
+	name = "large NCR Salvaged Power Armour"
+	desc = "It's unclear just want kind of power armour this once was. Was it T-51? Was it APA? Maybe it was just a suit of excavator armor? There's no way of knowing. What is clear though, is that the suit cannot be repaired or restored to what it once was, and it's far too large for a normal human to wear. Decorated with the NCR flag."
+	icon_state = "mutie_ncr_salvaged"
+	item_state = "mutie_ncr_salvaged"
 
 ///////////////////////////
 // !!!FACTION SECTION!!! //
@@ -245,11 +270,11 @@
 
 /////////
 // NCR //
-///////// 
+/////////
 
-/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/ncr
+/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45d/ncr
 	name = "salvaged NCR power armor"
-	desc = "It's a set of T-45b power armor with a air conditioning module installed, sadly it lacks servomotors to enhance the users strength. The paintjob and the two headed bear painted onto the chestplate shows it belongs to the NCR."
+	desc = "It's a set of T-45d power armor with a air conditioning module installed, sadly it lacks servomotors to enhance the users strength. The paintjob and the two headed bear painted onto the chestplate shows it belongs to the NCR."
 	icon = 'icons/fallout/clothing/armored_heavy.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
 	icon_state = "ncr_salvaged"
@@ -278,14 +303,30 @@
 	item_state = "legion_centurion"
 	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_LESS_T1 *ARMOR_SLOWDOWN_GLOBAL_MULT
 
-/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/palacent //laser resist spec
+/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45d/palacent //laser resist spec
 	name = "legion centurion paladin-slayer armor"
 	desc = "A Centurion able to defeat a Brotherhood Paladin gets the honorific title 'Paladin-Slayer', and adds bits of the looted armor to his own."
 	icon_state = "legion_palacent"
 	item_state = "legion_palacent"
 	slowdown = ARMOR_SLOWDOWN_SALVAGE * ARMOR_SLOWDOWN_LESS_T1 *ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T2)
-	
+
+/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45d/legion //Legion T45d SPA from recipe
+	name = "salvaged parma T-45d power armor"
+	desc = "Reforged armor made from the husk of T45d power armor. It seems faster, at the cost of some protection. It is fitting that it has the icons of the Legion, as it takes the strength of a brahmin to wear."
+	icon_state = "legion_parma"
+	item_state = "legion_parma"
+	slowdown = ARMOR_SLOWDOWN_SALVAGE * ARMOR_SLOWDOWN_LESS_T1 *ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_DT_T1)
+
+/obj/item/clothing/suit/armor/heavy/salvaged_pa/t51b/legion //Legion T51b SPA from recipe
+	name = "salvaged scutum T-51b power armor"
+	desc = "Reforged armor made from the husk of T51b power armor. It seems faster, at the cost of some protection. It is fitting that it has the icons of the Legion, as it takes the strength of a brahmin to wear."
+	icon_state = "legion_scutum"
+	item_state = "legion_scutum"
+	slowdown = ARMOR_SLOWDOWN_SALVAGE * ARMOR_SLOWDOWN_LESS_T1 *ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T1)
+
 /obj/item/clothing/suit/armor/heavy/legion/legate
 	name = "legion legate armor"
 	desc = "Made by the most skilled blacksmiths in Arizona, the bronzed steel of this rare armor offers good protection, and the scars on its metal proves it has seen use on the field."

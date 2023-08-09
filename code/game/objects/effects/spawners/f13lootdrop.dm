@@ -305,7 +305,9 @@
 				/obj/effect/spawner/bundle/f13/armor/combat,
 				/obj/effect/spawner/bundle/f13/armor/bulletproof,
 				/obj/effect/spawner/bundle/f13/armor/sulphite,
-				/obj/effect/spawner/bundle/f13/armor/vault
+				/obj/effect/spawner/bundle/f13/armor/vault,
+				/obj/item/clothing/suit/armor/medium/combat/duster,
+				/obj/item/clothing/suit/armor/medium/duster/armoredcoat
 				)
 
 /obj/effect/spawner/lootdrop/f13/armor/randomraiderchest //random raider armor
@@ -316,7 +318,7 @@
 				/obj/item/clothing/suit/armor/medium/raider/rebel,
 				/obj/item/clothing/suit/armor/medium/raider/scrapcombat,
 				/obj/item/clothing/suit/armor/medium/raider/slam,
-				/obj/item/clothing/suit/armor/medium/raider/wastewar,
+				/obj/item/clothing/suit/armor/light/raider/wastewar,
 				/obj/item/clothing/suit/armor/medium/combat/mk2/raider) // da grail
 
 /obj/effect/spawner/lootdrop/f13/armor/randomraiderhead //random raider armor
@@ -369,23 +371,23 @@
 /obj/effect/spawner/lootdrop/f13/armor/tier4 //TIER 4 ARMOR
 	name = "tier 4 armor"
 	loot = list(
-				/obj/effect/spawner/bundle/f13/armor/t45b_salvaged,
+				/obj/effect/spawner/bundle/f13/armor/t45d_salvaged,
 				/obj/effect/spawner/bundle/f13/armor/riot,
 				/obj/effect/spawner/bundle/f13/armor/combat/mk2,
 				/obj/effect/spawner/bundle/f13/armor/combat/mk2/dark,
 				)
 
-/obj/effect/spawner/bundle/f13/armor/t45b_salvaged
-	name = "salvaged t45b power armor spawner"
+/obj/effect/spawner/bundle/f13/armor/t45d_salvaged
+	name = "salvaged t45d power armor spawner"
 	items = list(
-				/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b,
-				/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b
+				/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45d,
+				/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45d
 				)
 
 /obj/effect/spawner/bundle/f13/armor/riot
 	name = "riot armor spawner"
 	items = list(
-				/obj/item/clothing/suit/armor/heavy/riot,
+				/obj/item/clothing/suit/armor/heavy/riot/combat,
 				/obj/item/clothing/head/helmet/f13/combat/rangerbroken
 				)
 
@@ -413,15 +415,15 @@
 /obj/effect/spawner/bundle/f13/armor/raiderpa
 	name = "raider power armor spawner"
 	items = list(
-				/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/raider,
-				/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b/raider
+				/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45d/raider,
+				/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45d/raider
 				)
 
 /obj/effect/spawner/bundle/f13/armor/hotrodpa
 	name = "hotrod power armor spawner"
 	items = list(
-				/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/hotrod,
-				/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b/hotrod
+				/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45d/hotrod,
+				/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45d/hotrod
 				)
 
 
@@ -595,13 +597,13 @@
 		)
 
 /obj/effect/spawner/lootdrop/f13/medical/random_fev
-	name = "random FEV bottle"	//for when you can't decide what is worse
+	name = "2% FEV, 98% Polonium"	//Curling-B-Gone
 	lootcount = 1
 
 	loot = list(
 		/obj/item/reagent_containers/glass/bottle/FEV_solution = 1,
 		/obj/item/reagent_containers/glass/bottle/FEV_solution/two = 1,
-		/obj/item/reagent_containers/glass/bottle/FEV_solution/curling = 1,
+		/obj/item/reagent_containers/glass/bottle/polonium = 98,
 		)
 
 /*	------------------------------------------------
@@ -766,8 +768,7 @@
 	name = "mid tier energy gun"
 	loot = list(/obj/effect/spawner/bundle/f13/aer9 = 40,
 				/obj/effect/spawner/bundle/f13/wattz2k = 30,
-				/obj/effect/spawner/bundle/f13/plasmapistol = 25,
-				/obj/effect/spawner/bundle/f13/ionrifle = 5
+				/obj/effect/spawner/bundle/f13/plasmapistol = 25
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh //overlaps with midtier
@@ -788,8 +789,9 @@
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/superhigh
 	name = "superhigh tier energy gun"
-	loot = list(/obj/effect/spawner/bundle/f13/multiplas,
-				/obj/item/gun/energy/laser/plasma/pistol/alien
+	loot = list(/obj/item/gun/energy/laser/plasma/caster/balanced,
+				/obj/item/minigunpack,
+				/obj/item/gun/energy/laser/aer14
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/unique
@@ -797,11 +799,12 @@
 	lootcount = 1
 
 	loot = list(/obj/item/gun/energy/laser/solar,
-				/obj/item/gun/energy/laser/scatter/laserbuss,
+				/* /obj/item/gun/energy/laser/scatter/laserbuss, */
 				/obj/item/gun/energy/laser/plasma/pistol/eve,
 				/obj/item/gun/energy/laser/wattz2ks,
 				/obj/effect/spawner/bundle/f13/aer14,
-				/obj/item/gun/energy/laser/plasma/pistol/adam
+				/obj/item/gun/energy/laser/plasma/pistol/adam,
+				/obj/item/minigunpack
 				)
 
 //Ballistic Weapon Spawners
@@ -931,7 +934,8 @@
 				/obj/effect/spawner/bundle/f13/fnfal = 10,
 				/obj/item/gun/ballistic/rocketlauncher = 10,
 				/obj/item/gun/ballistic/automatic/bozar = 10,
-				/obj/effect/spawner/bundle/f13/infiltrator = 15
+				/obj/effect/spawner/bundle/f13/infiltrator = 15,
+				/obj/item/minigunpackbal5mm = 10
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhighcargo //this loot table is for the prewar cargo crate
@@ -1191,7 +1195,7 @@
 	name = "10mm SMG and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/smg/smg10mm,
-				/obj/item/ammo_box/magazine/m10mm/adv/ext/
+				/obj/item/ammo_box/magazine/m10mm/smg
 				)
 
 /obj/effect/spawner/bundle/f13/greasegun
@@ -2133,7 +2137,6 @@ obj/effect/spawner/bundle/f13/combat_rifle
 		/obj/item/book/granter/crafting_recipe/blueprint/smg10mm,
 		/obj/item/book/granter/crafting_recipe/blueprint/aep7,
 		/obj/item/book/granter/crafting_recipe/blueprint/scoutcarbine,
-		/obj/item/book/granter/crafting_recipe/blueprint/sniper
 	)
 
 
@@ -2169,10 +2172,10 @@ obj/effect/spawner/bundle/f13/combat_rifle
 	lootcount = 1
 	loot = list(
 		/obj/item/book/granter/crafting_recipe/blueprint/gauss,
-		/obj/item/book/granter/crafting_recipe/blueprint/am_rifle,
+		/obj/item/book/granter/crafting_recipe/blueprint/sniper,
 		/obj/item/book/granter/crafting_recipe/blueprint/citykiller,
 		/obj/item/book/granter/crafting_recipe/blueprint/rangemaster,
-		/obj/item/book/granter/crafting_recipe/blueprint/bozar
+		/obj/item/book/granter/crafting_recipe/blueprint/lsw
 	)
 
 /obj/effect/spawner/lootdrop/f13/blueprintVHighPartsWeighted

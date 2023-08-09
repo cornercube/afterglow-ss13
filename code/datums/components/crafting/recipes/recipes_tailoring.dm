@@ -17,22 +17,22 @@
 /datum/crafting_recipe/combat_jacket
 	name = "Combat Jacket"
 	result = /obj/item/clothing/suit/armor/light/leather/leather_jacket
-	reqs = list(/obj/item/clothing/suit/armor/light/leather/leather_jacket = 1,
-				/obj/item/stack/sheet/animalhide/brahmin = 1,
-				/obj/item/stack/sheet/animalhide/gecko = 1,
-				/obj/item/stack/sheet/leather = 1)
+	reqs = list(/obj/item/clothing/suit/armor/light/leather/leathercoat = 1,
+				/obj/item/stack/sheet/animalhide/deathclaw  = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 60
 	category = CAT_CLOTHING
 	skill_needed = SKILL_OUTDOORSMAN
-	skill_level = VERY_EASY_CHECK  
+	skill_level = VERY_EASY_CHECK
 	subcategory = CAT_ARMOR
 
 /datum/crafting_recipe/combat_coat
 	name = "Combat Coat"
 	result = /obj/item/clothing/suit/armor/light/leather/leathercoat
-	reqs = list(/obj/item/clothing/suit/armor/light/leather/leather_jacket = 1,
-				/obj/item/stack/sheet/animalhide/deathclaw  = 1)
+	reqs = list(/obj/item/clothing/suit/armor/light/leather/leathersuit = 1,
+				/obj/item/stack/sheet/animalhide/brahmin = 1,
+				/obj/item/stack/sheet/animalhide/gecko = 1,
+				/obj/item/stack/sheet/leather = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 60
 	category = CAT_CLOTHING
@@ -72,7 +72,7 @@
 	time = 60
 	category = CAT_CLOTHING
 	skill_needed = SKILL_OUTDOORSMAN
-	skill_level = VERY_EASY_CHECK 
+	skill_level = VERY_EASY_CHECK
 	subcategory = CAT_ARMOR
 
 /datum/crafting_recipe/leatherarmor2
@@ -96,7 +96,7 @@
 	time = 60
 	category = CAT_CLOTHING
 	skill_needed = SKILL_OUTDOORSMAN
-	skill_level = VERY_EASY_CHECK 
+	skill_level = VERY_EASY_CHECK
 	subcategory = CAT_ARMOR
 
 /datum/crafting_recipe/metalarmor
@@ -1106,8 +1106,8 @@ datum/crafting_recipe/steelbib/heavy
 
 /datum/crafting_recipe/ncrsalvagedarmorconversion
 	name = "Salvaged NCR Power Armor"
-	result = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/ncr
-	reqs = list(/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b = 1,
+	result = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45d/ncr
+	reqs = list(/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45d = 1,
 				/obj/item/toy/crayon/spraycan)
 	time = 30
 	category = CAT_CLOTHING
@@ -1115,15 +1115,54 @@ datum/crafting_recipe/steelbib/heavy
 	always_available = FALSE
 
 /datum/crafting_recipe/ncrsalvagedhelmetconversion
-	name = "NCR salvaged T-45b helmet"
-	result = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b/ncr
-	reqs = list(/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b = 1,
+	name = "NCR salvaged T-45d helmet"
+	result = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45d/ncr
+	reqs = list(/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45d = 1,
 				/obj/item/toy/crayon/spraycan)
 	time = 20
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
 	always_available = FALSE
 
+/datum/crafting_recipe/legionparmaarmorconversion
+	name = "Salvaged Parma T-45 Armor"
+	result = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45d/legion
+	reqs = list(/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45d = 1,
+				/obj/item/toy/crayon/spraycan)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
+/datum/crafting_recipe/legionparmahelmetconversion
+	name = "Salvaged Parma T-45 helmet"
+	result = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45d/legion
+	reqs = list(/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45d = 1,
+				/obj/item/toy/crayon/spraycan)
+	time = 20
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
+/datum/crafting_recipe/legionscutumarmorconversion
+	name = "Salvaged Scutum T-51 Armor"
+	result = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t51b/legion
+	reqs = list(/obj/item/clothing/suit/armor/heavy/salvaged_pa/t51b = 1,
+				/obj/item/toy/crayon/spraycan)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
+/datum/crafting_recipe/legionscutumhelmetconversion
+	name = "Salvaged Scutum T-51 Helmet"
+	result = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t51b/legion
+	reqs = list(/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t51b = 1,
+				/obj/item/toy/crayon/spraycan)
+	time = 20
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
 ///////////////////////////////////
 // FACTIONS COMBAT ARMOR SECTION //
 ///////////////////////////////////

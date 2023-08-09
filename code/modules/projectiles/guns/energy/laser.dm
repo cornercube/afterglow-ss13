@@ -419,6 +419,23 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto
 	)
+
+//AEP9
+/obj/item/gun/energy/laser/pistol/revolver
+	name = "\improper AEP9 laser revolver"
+	desc = "A basic energy-based laser gun that fires concentrated beams of light. 'Revolver' version of the AEP7. Armor-penetrating beams dealing more damage, but acting with far less efficiency."
+	icon_state = "AEP9"
+	item_state = "laser-pistol"
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = ITEM_SLOT_BELT
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/hitscan/revolver)
+	cell_type = /obj/item/stock_parts/cell/ammo/ec
+	can_scope = FALSE
+	draw_time = GUN_DRAW_QUICK
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	weapon_weight = GUN_ONE_HAND_ONLY
+
+
 // Debug laser pistol that does 10 damage and 0 DT piercing
 /obj/item/gun/energy/laser/pistol/debug_10_damage_0_dt_pierce
 	name = "\improper Debug laser pistol that does 10 damage and 0 DT piercing"
@@ -579,16 +596,16 @@
 	zoom_factor = 1
 	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
 
-	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
+	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_SLOW
+	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
+		/datum/firemode/semi_auto/slower
 	)
 
 //Wattz 2000 Extended
@@ -679,6 +696,19 @@
 		/datum/firemode/semi_auto/slow
 	)
 
+//Tri-Focus AER9 - Automatic AER9 with lower damage
+/obj/item/gun/energy/laser/aer9/auto
+	name = "\improper Tri-Focus AER9 laser rifle"
+	desc = "A sturdy pre-war laser rifle. Rapidly emits beams of concentrated light to kill targets. Automatic, but not very powerful."
+	icon_state = "tri_focus_aer9"
+	slot_flags = ITEM_SLOT_BACK
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/hitscan)
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp
+	init_firemodes = list(
+		/datum/firemode/automatic/rpm200,
+		/datum/firemode/semi_auto/slow
+	)
+
 //AER-12 - basically stronger AP/damage AER-9 but with higher power consumption.
 /obj/item/gun/energy/laser/aer12
 	name = "AER12 laser rifle"
@@ -690,14 +720,14 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_SLOWER
+	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slower
+		/datum/firemode/semi_auto/slow
 	)
 
 //Ultracite Laser rifle
@@ -739,6 +769,7 @@
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
+	init_recoil = RIFLE_RECOIL(5)
 	draw_time = GUN_DRAW_LONG
 	fire_delay = GUN_FIRE_DELAY_SLOWER * 0.9 //too slow.
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
@@ -762,6 +793,7 @@
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
+	init_recoil = RIFLE_RECOIL(5)
 	draw_time = GUN_DRAW_LONG
 	fire_delay = GUN_FIRE_DELAY_SLOWER * 0.9 //too slow.
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
@@ -789,14 +821,14 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_SLOW
+	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	init_firemodes = list(
-		/datum/firemode/semi_auto/slow
+		/datum/firemode/semi_auto
 	)
 
 //LAER Energy rifle
@@ -833,7 +865,8 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/rcw/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
 	equipsound = 'sound/f13weapons/equipsounds/RCWequip.ogg'
-
+	custom_price = PRICE_REALLY_EXPENSIVE
+	custom_premium_price = PRICE_REALLY_EXPENSIVE
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -883,7 +916,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/gammagun)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	ammo_x_offset = 3
-
+	automatic_charge_overlays = FALSE
 	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY

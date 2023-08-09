@@ -366,14 +366,12 @@ GLOBAL_LIST_INIT(loot_t1_armor, list(
 ))
 
 GLOBAL_LIST_INIT(loot_t2_armor, list(
-	/obj/item/clothing/head/helmet/f13/raider,
 	/obj/item/clothing/head/helmet/f13/raider/arclight,
 	/obj/item/clothing/suit/armor/medium/raider/blastmaster,
 	/obj/item/clothing/head/helmet/f13/raider/blastmaster,
 	/obj/item/clothing/suit/armor/medium/raider/yankee,
 	/obj/item/clothing/head/helmet/f13/raider/yankee,
 	/obj/item/clothing/head/helmet/f13/fiend,
-	/obj/item/clothing/head/helmet/f13/raider,
 	/obj/item/clothing/suit/armor/medium/raider/iconoclast
 ))
 
@@ -403,8 +401,8 @@ GLOBAL_LIST_INIT(loot_t4_armor, list(
 ))
 
 GLOBAL_LIST_INIT(loot_t5_armor, list(
-	/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b,
-	/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b,
+	/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45d,
+	/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45d,
 	/obj/item/clothing/suit/armor/heavy/riot,
 	/obj/item/clothing/suit/armor/heavy/riot/police,
 	/obj/item/clothing/head/helmet/f13/combat/rangerbroken,
@@ -884,12 +882,13 @@ GLOBAL_LIST_INIT(loot_skillbook, list(
 ))
 
 GLOBAL_LIST_INIT(loot_craft_advanced, list(
-	/obj/item/advanced_crafting_components/flux,
-	/obj/item/advanced_crafting_components/lenses,
-	/obj/item/advanced_crafting_components/conductors,
-	/obj/item/advanced_crafting_components/receiver,
-	/obj/item/advanced_crafting_components/assembly,
-	/obj/item/advanced_crafting_components/alloys
+	/obj/item/advanced_crafting_components/flux = 1,
+	/obj/item/advanced_crafting_components/lenses = 1,
+	/obj/item/advanced_crafting_components/conductors = 1,
+	/obj/item/advanced_crafting_components/receiver = 1,
+	/obj/item/advanced_crafting_components/assembly = 1,
+	/obj/item/advanced_crafting_components/alloys = 1,
+	/obj/item/advanced_crafting_components/p_circuits = 2
 ))
 
 GLOBAL_LIST_INIT(loot_attachment, list(

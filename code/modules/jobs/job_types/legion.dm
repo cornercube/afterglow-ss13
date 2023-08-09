@@ -41,6 +41,10 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/leg_combat_mk2)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/leg_combat_helm)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/leg_combat_helm_mk2)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionparmaarmorconversion)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionparmahelmetconversion)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionscutumarmorconversion)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionscutumhelmetconversion)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire
 	belt = /obj/item/storage/belt/army/assault/legion
@@ -72,6 +76,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 		return
 	ADD_TRAIT(H, TRAIT_TRIBAL, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
+	ADD_TRAIT(H, TRAIT_MARS_TEACH, src)
 	//ADD_TRAIT(H, TRAIT_FEARLESS, src) //no phobias for legion!
 	//ADD_TRAIT(H, TRAIT_BERSERKER, src)
 
@@ -229,7 +234,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	id = /obj/item/card/id/dogtag/legcenturion
 	mask = /obj/item/clothing/mask/bandana/legion/legcenturion
 	ears = /obj/item/radio/headset/headset_legion/cent
-	neck = /obj/item/clothing/neck/mantle/legion
+	//neck = /obj/item/clothing/neck/mantle/legion
 	gloves = /obj/item/clothing/gloves/legion/plated
 	glasses = /obj/item/clothing/glasses/night/polarizing
 	shoes = /obj/item/clothing/shoes/f13/military/plated
@@ -246,8 +251,8 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 
 /datum/outfit/loadout/palacent
 	name = "Paladin-Slayer Centurion"
-	suit = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/palacent
-	head = /obj/item/clothing/head/helmet/f13/legion/palacent
+	suit = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45d/palacent
+	head = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45d/palacent
 	suit_store = /obj/item/gun/ballistic/automatic/bar
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m762/ext = 2,
@@ -528,9 +533,9 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 
 /datum/outfit/loadout/recdectribal
 	name = "Blackliner Decanus"
-	suit_store = /obj/item/gun/ballistic/automatic/m1garand
+	suit_store = /obj/item/gun/ballistic/rifle/repeater/trail
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/garand308 = 2,
+		/obj/item/ammo_box/m44box = 1,
 		/obj/item/melee/onehanded/machete/forgedmachete = 1,
 		/obj/item/storage/backpack/spearquiver = 1,
 		/obj/item/bottlecap_mine = 1,
@@ -613,9 +618,9 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 /datum/outfit/loadout/vexbear
 	name = "Mountain Bear"
 	head = /obj/item/clothing/head/helmet/f13/legion/vet/combvexil
-	suit_store = /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever
+	suit_store = /obj/item/gun/ballistic/shotgun/automatic/combat/auto5
 	backpack_contents = list(
-		/obj/item/melee/unarmed/tigerclaw = 1,
+		/obj/item/melee/powered/ripper = 1,
 		/obj/item/ammo_box/shotgun/slug = 1,
 		/obj/item/ammo_box/shotgun/buck = 2,
 		)
@@ -626,7 +631,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	suit_store = /obj/item/gun/ballistic/automatic/assault_carbine/ak112
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m5mm = 2,
-		/obj/item/melee/onehanded/machete/spatha = 1,
+		/obj/item/melee/unarmed/tigerclaw = 1,
 		)
 
 /datum/outfit/loadout/vexnight
@@ -700,7 +705,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	suit_store = /obj/item/gun/ballistic/automatic/smg/smg10mm
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m10mm = 2,
+		/obj/item/ammo_box/magazine/m10mm/smg = 3,
 		/obj/item/grenade/smokebomb = 1,
 		/obj/item/grenade/homemade/coffeepotbomb = 1,
 		/obj/item/restraints/legcuffs/bola/tactical = 1,
@@ -794,7 +799,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	suit_store = /obj/item/gun/ballistic/automatic/smg/smg10mm
 	backpack_contents = list(
 		/obj/item/twohanded/spear/lance = 1,
-		/obj/item/ammo_box/magazine/m10mm/adv/ext = 2,
+		/obj/item/ammo_box/magazine/m10mm/smg = 3,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2,
 		/obj/item/melee/onehanded/machete/gladius = 1,
 		)
@@ -812,9 +817,10 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 
 /datum/outfit/loadout/vetrifle
 	name = "Sharpshooter"
-	suit_store = /obj/item/gun/ballistic/rifle/repeater/cowboy
+	suit_store = /obj/item/gun/ballistic/automatic/m1garand
 	backpack_contents = list(
-		/obj/item/ammo_box/a357 = 1,
+		/obj/item/ammo_box/magazine/garand308 = 2,
+		/obj/item/gun_upgrade/scope/killer = 1,			//About equal to a DKS's scope with this one. Watchman is lower-zoom.
 		/obj/item/melee/onehanded/knife/throwing = 2,
 		/obj/item/reagent_containers/pill/bitterdrink = 1,
 		/obj/item/restraints/legcuffs/beartrap = 1,
@@ -1262,8 +1268,9 @@ Venator  - Zero slots, role built on cloning vet ranger, linear just vastly bett
 	exp_requirements = 750
 
 	loadout_options = list(
-		/datum/outfit/loadout/aupclose, // 14mm SMG, ripper
-		/datum/outfit/loadout/adeadeye, // AMR
+		/datum/outfit/loadout/aupclose, // Breacher shotgun.
+		/datum/outfit/loadout/adeadeye, // Venator sniper.
+		/datum/outfit/loadout/hitnrun,  // 10mm smg.
 		)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13venator/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -1296,16 +1303,26 @@ Venator  - Zero slots, role built on cloning vet ranger, linear just vastly bett
 /datum/outfit/loadout/aupclose
 	name = "Up-Close Killer"
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/smg14 = 2,
-		/obj/item/gun/ballistic/automatic/smg/smg14 = 1,
+		/obj/item/ammo_box/magazine/d12g = 2,
+		/obj/item/gun/ballistic/automatic/shotgun/riot = 1,
 		/obj/item/flashlight/lantern = 1,
 		)
+
+/datum/outfit/loadout/hitnrun
+	name = "Hit and Run"
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m10mm/smg = 2,
+		/obj/item/gun/ballistic/automatic/smg/smg10mm = 1,
+		/obj/item/flashlight/lantern = 1,
+		/obj/item/melee/powered/ripper = 1,
+		)
+
 
 /datum/outfit/loadout/adeadeye
 	name = "Deadeye"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/marksman/sniper/snipervenator = 1,
-		/obj/item/ammo_box/magazine/w308 = 3,
+		/obj/item/gun/ballistic/rifle/mag/antimateriel = 1,
+		/obj/item/ammo_box/magazine/amr = 3,
 		/obj/item/flashlight/lantern = 1,
 		)
 

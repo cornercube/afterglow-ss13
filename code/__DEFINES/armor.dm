@@ -64,7 +64,7 @@
 		"linebullet" = 15, \
 		"linelaser" = 15, \
 		"energy" = 0, \
-		"bomb" = 0, \
+		"bomb" = 15, \
 		"bio" = 10, \
 		"rad" = 10, \
 		"fire" = 10, \
@@ -85,7 +85,7 @@
 		"linebullet" = 35, \
 		"linelaser" = 35, \
 		"energy" = 5, \
-		"bomb" = 10, \
+		"bomb" = 30, \
 		"bio" = 25, \
 		"rad" = 25, \
 		"fire" = 25, \
@@ -106,7 +106,7 @@
 		"linebullet" = 50, \
 		"linelaser" = 50, \
 		"energy" = 10, \
-		"bomb" = 25, \
+		"bomb" = 50, \
 		"bio" = 25, \
 		"rad" = 25, \
 		"fire" = 35, \
@@ -120,42 +120,44 @@
  * Great defense
  * Lots of DT
  *
- * +90 effective HP
+ * +80 effective HP
  * +10 laser HP
  * * * * * * * * * * * */
 #define ARMOR_VALUE_SALVAGE list(\
+		"linemelee" = 80, \
+		"linebullet" = 80, \
+		"linelaser" = 90, \
+		"energy" = 30, \
+		"bomb" = 70, \
+		"bio" = 100, \
+		"rad" = 50, \
+		"fire" = 70, \
+		"acid" = 70, \
+		"wound" = 70, \
+		"damage_threshold" = 7)
+
+/* Power armor values
+ * Low mobility
+ * Amazing environmental resistances
+ * Great defense
+ * Lots of DT
+ *
+ * +90 effective HP
+ * +10 laser HP
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_PA list(\
 		"linemelee" = 90, \
 		"linebullet" = 90, \
 		"linelaser" = 100, \
-		"energy" = 30, \
-		"bomb" = 60, \
-		"bio" = 80, \
-		"rad" = 50, \
-		"fire" = 80, \
-		"acid" = 80, \
-		"wound" = 45, \
-		"damage_threshold" = 10)
-
-/* Power armor values
- * High mobility
- * Amazing environmental resistances
- * OP defense
- *
- * +125 effective HP
- * +25 laser HP
- * * * * * * * * * * * */
-#define ARMOR_VALUE_PA list(\
-		"linemelee" = 125, \
-		"linebullet" = 125, \
-		"linelaser" = 150, \
 		"energy" = 40, \
-		"bomb" = 90, \
+		"bomb" = 70, \
 		"bio" = 100, \
 		"rad" = 55, \
 		"fire" = 95, \
 		"acid" = 95, \
 		"wound" = 100, \
-		"damage_threshold" = 12)
+		"damage_threshold" = 10)
+
 /* * * * * * * * * * * * * * *
  * MOB SPECIFIC ARMOR VALUES *
  * * * * * * * * * * * * * * */
